@@ -1,0 +1,11 @@
+﻿<Window x:Class="MobileShopping.Detail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Thông tin chi tiết" Height="400" Width="400">
+    <Grid>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="187,40,0,0" Name="txtPrice" Text="Giá" VerticalAlignment="Top" />
+        <Image Height="115" HorizontalAlignment="Left" Margin="12,40,0,0" Name="imgProduct" Stretch="Fill" VerticalAlignment="Top" Width="169" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="26,11,0,0" Name="txtProductName" Text="Thông tin sản phẩm" VerticalAlignment="Top" Width="155" />
+        <TextBlock Height="98" HorizontalAlignment="Left" Margin="12,161,0,0" Name="txtDescription" Text="Mô tả" VerticalAlignment="Top" Width="263" />
+    </Grid>
+</Window>
