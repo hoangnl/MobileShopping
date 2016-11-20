@@ -131,7 +131,20 @@ namespace MobileShopping
             {
                 var detailProductWindow = (Detail)DetailWindowSingleton.GetInstance();
                 detailProductWindow.BindProductDetail(item.Link);
-                detailProductWindow.Show();
+                if (!detailProductWindow.IsVisible)
+                {
+                    detailProductWindow.Show();
+                }
+
+                if (detailProductWindow.WindowState == WindowState.Minimized)
+                {
+                    detailProductWindow.WindowState = WindowState.Normal;
+                }
+
+                detailProductWindow.Activate();
+                detailProductWindow.Topmost = true;  // important
+                detailProductWindow.Topmost = false; // important
+                detailProductWindow.Focus();
             }
         }
     }

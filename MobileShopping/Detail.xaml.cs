@@ -2,6 +2,7 @@
 using MobileShopping.Service;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -24,15 +25,24 @@ namespace MobileShopping
         public Detail()
         {
             InitializeComponent();
+            this.Closing += new CancelEventHandler(Window_Closing);
             _shoppingService = new ShoppingService();
         }
 
         public void BindProductDetail(string link)
         {
             ProductDetail item = _shoppingService.GetProductDetail(link);
-            txtDescription.Text = item.Description;
+            rtbDescription.Selection.Text = item.Description;
             txtPrice.Text = item.Price;
             txtProductName.Text = item.ProductName;
+            lvSlides.ItemsSource = item.ImageLinkLst;
+
+        }
+
+        public void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.Visibility = Visibility.Hidden;
         }
 
 

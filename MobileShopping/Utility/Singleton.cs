@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,28 @@ namespace MobileShopping.Utility
             if (_instance == null)
             {
                 _instance = new Detail();
+            }
+
+            return _instance;
+        }
+    }
+
+    public class HtmlWebSingleton
+    {
+        private static HtmlWeb _instance;
+
+        // Constructor is 'protected'
+        protected HtmlWebSingleton()
+        {
+        }
+
+        public static HtmlWeb GetInstance()
+        {
+            // Uses lazy initialization.
+            // Note: this is not thread safe.
+            if (_instance == null)
+            {
+                _instance = new HtmlWeb();
             }
 
             return _instance;

@@ -12,5 +12,12 @@ namespace MobileShopping.Utility
         {
             return Regex.Replace(input, "<.*?>", String.Empty);
         }
+
+        public static string InsertNewLine(this string input)
+        {
+            return Regex.Replace(input, "<p>",  Environment.NewLine + "<p>");
+        }
+
+
     }
 }

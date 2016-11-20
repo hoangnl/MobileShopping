@@ -7,7 +7,11 @@ namespace MobileShopping.Model
 {
     public class ProductDetail : Product
     {
-        public string Link { get; set; }
+        public ProductDetail()
+        {
+            ImageLinkLst = new List<string>();
+        }
+        public List<string> ImageLinkLst { get; set; }
         public string Description { get; set; }
     }
 }
